@@ -1,0 +1,44 @@
+{
+  "name": "@nerdbeheard/remove-protractor-schematic",
+  "version": "1.0.0",
+  "description": "Remove Protractor from an Angular CLI project",
+  "repository": "digitaldrummerj/remove-protractor-schematic",
+  "bugs": "https://github.com/digitaldrummerj/remove-protractor-schematic/issues",
+  "homepage": "https://github.com/digitaldrummerj/remove-protractor-schematic",
+  "main": "src/remove-protractor/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:clean:launch": "npm run build && npm run clean:launch",
+    "clean": "git checkout HEAD -- sandbox && git clean -f -d sandbox",
+    "clean:launch": "npm run clean && npm run launch",
+    "launch": "cd sandbox && ng g @nerdbeheard/remove-protractor-schematic:remove-protractor",
+    "link:schematic": "npm link && cd sandbox && npm  link @nerdbeheard/remove-protractor-schematic",
+    "publish": "npm run build",
+    "test": "npm run build:clean:launch && npm run test:sandbox && npm run clean",
+    "test:sandbox": "cd sandbox && npm run lint && npm run test && npm run build",
+    "test:unit": "npm run build && jasmine src/**/*_spec.js"
+  },
+  "keywords": [
+    "schematics",
+    "protractor",
+    "testing",
+    "e2e"
+  ],
+  "author": "digitaldrummerj",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@angular-devkit/core": "^7.2.3",
+    "@angular-devkit/schematics": "^7.2.3",
+    "@schematics/angular": "^7.2.3"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.3.8",
+    "@types/node": "^10.12.18",
+    "jasmine": "^3.3.1",
+    "typescript": "~3.2.4"
+  }
+}

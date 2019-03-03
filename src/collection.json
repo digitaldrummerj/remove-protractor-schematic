@@ -1,0 +1,20 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-remove": {
+      "description": "Remove Protractor to an existing Angular CLI project",
+      "factory": "./remove-protractor/index",
+      "schema": "./remove-protractor/schema.json"
+    },
+    "remove-protractor": {
+      "description": "Remove Protractor to an existing Angular CLI project",
+      "factory": "./remove-protractor/index",
+      "schema": "./remove-protractor/schema.json"
+    },
+    "remove": {
+      "description": "Remove Protractor to an existing Angular CLI project",
+      "factory": "./remove-protractor/index",
+      "schema": "./remove-protractor/schema.json"
+    }
+  }
+}
